@@ -13,9 +13,19 @@ var app = express(); */
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
 
 const port = 3006;
 const app = express();
+
+//setting up Express to handle our webpack bundle
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo:true,
+    publicPath: config.output.publicPath
+}));
 
 //declare routing
 app.get('/', function(req, res){
