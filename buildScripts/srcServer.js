@@ -16,6 +16,9 @@ import open from 'open';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
+/* Console.logs are okay in build scripts, so: */
+/* eslint-disable no-console */
+
 const port = 3006;
 const app = express();
 
