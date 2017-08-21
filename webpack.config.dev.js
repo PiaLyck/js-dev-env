@@ -21,3 +21,4 @@ export default {
     ]
   }
 }
+/* devtool = what to use to enchance debugging once you have transpiled and bundled and everything is a mess */
