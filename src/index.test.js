@@ -11,7 +11,7 @@ describe('My first test', function () {
 
 //The file I want to test in JSDOM
 describe('index.html', function () {
-    it('should say hello', function (done) {
+    it('should say Dogs in a h1 tag', function (done) {
         const index = fs.readFileSync('./src/index.html', 'utf-8');
         //define JSDOM environment
         jsdom.env(index, function (err, window) {
@@ -19,7 +19,7 @@ describe('index.html', function () {
             const h1 = window.document.getElementsByTagName('h1')[0];
 
             //and write what we expect:
-            expect(h1.innerHTML).to.equal("Hello World, dér");
+            expect(h1.innerHTML).to.equal("Dogs");
 
             //Because you're doing an asyncronous test with a callball, tell Mocha that now the test is done: 
             done();

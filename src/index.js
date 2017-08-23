@@ -1,5 +1,19 @@
-import numeral from 'numeral'; //library to handle number (from package.json)
+import { getDogs } from './api/dogApi';
 
-const totalWorth = numeral(1200425).format('$0,0.00');
-debugger; //creates a break point. Thanks to devtool: sourcemaps in webpack.config, I can see the un-bundled code.
-console.log(`I am an amazing creature and my worth is at least ${totalWorth}!`); //using backticks (clever ES6 template string feature)
+//Populate table of dogs via API call.
+getDogs().then(result => {
+    let dogsBody = "";
+
+    result.forEach(dog => {
+        dogsBody += `<tr>
+        <td><a href="#" data-id="${dog.id}" class="deleteDog">Delete</a></td>
+        <td>${dog.id}</td>
+        <td>${dog.firstName}</td>
+        <td>${dog.lastName}</td>
+        <td>${dog.email}</td>
+            </tr>`
+    });
+
+    global.document.getElementById('dogs').innerHTML = dogsBody;
+
+});

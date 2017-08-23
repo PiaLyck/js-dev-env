@@ -35,6 +35,17 @@ app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../src/index.html'));
 }); 
 
+//Get dogs
+app.get('/dogs', function(req, res){
+    //Hard coded for simplicity, but pretend this hits a real database. 
+    res.json([
+        {"id": 1, "firstName":"Chubby", "lastName": "von Fatty", "email":"justbigboned@barkmail.com"},
+        {"id": 2, "firstName":"Fluffy", "lastName": "McDog", "email":"fur4u@barkmail.com"},
+        {"id": 3, "firstName":"Mutt", "lastName": "Squigglybutt", "email":"bastardboi98@barkmail.com"},
+        {"id": 4, "firstName":"Sir Hal", "lastName": "Badbreath", "email":"hal.i.tosis@barkmail.com"}
+    ]);
+})
+
 app.listen(port, function(err){
     if(err){
     console.log(err);
