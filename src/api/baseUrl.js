@@ -2,7 +2,7 @@
 otherwise it will point to the real API (in this case hosted by Express) */
 
 export default function getBaseUrl(){
-    return getQueryStringParameterByName('useMockApi' ? 'http://localhost:3007/' : '/');
+    return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3007/' : '/';
 }
 
 function getQueryStringParameterByName(name, url) {
