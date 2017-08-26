@@ -12,4 +12,7 @@ for the production build.
 */
 
 /* eslint-disable no-unused-var */
-import fetch from 'whatwg-fetch';
+import fetch from 'whatwg-fetch'; //just a polyfill
+
+/* Examples of other vendors: jQuery, Bootstrap, Angular or any 
+other 3rd party library/framework used. */
