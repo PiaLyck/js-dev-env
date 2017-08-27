@@ -48,7 +48,10 @@ export default {
         minifyJS: true,
         minifyURLs: true
       },
-      inject: true
+      inject: true,
+      //Properties you define here are available in index.html
+      //using HtmlWebpackPlugin.options.varName
+      trackJSToken: 'gototheirwebsiteandgetyourowntoken'
     }),
 
     //Eliminate duplicate packages when generating bundle
